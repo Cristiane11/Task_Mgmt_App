@@ -1,6 +1,6 @@
 import { Nav, Navbar } from 'react-bootstrap';
 import { useAuth0 } from '@auth0/auth0-react';
-import LoginButton from './LoginButtun';
+import LoginButton from './LoginButton';
 import LogoutButton from './LogoutButton';
 
 const NavBar:React.FC = () => {

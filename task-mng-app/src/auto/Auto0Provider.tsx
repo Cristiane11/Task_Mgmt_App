@@ -2,20 +2,18 @@ import React from "react";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 type Auth0ProviderWithNavigateProps = {
-  children: any;
+  children: React.ReactNode;
 };
 
-const Auth0ProviderWithNavigate: React.FC<Auth0ProviderWithNavigateProps> = ({
-  children,
-}) => {
+const Auth0ProviderWithNavigate: React.FC<Auth0ProviderWithNavigateProps> = ({children }) => {
   const navigate = useNavigate();
   const domain = "dev-jiyfizsedn5owuqf.us.auth0.com";
   const clientId = "q1JTaTHAGAwMsbgO0cUseLy2YipXpLNf" ;
-  const redirectUri = "http://localhost:5173/callback"; // make sure the port matches your server
+  const redirectUri = "http://localhost:5173/callback"; 
 
   const onRedirectCallback = (appState: any) => {
-    navigate((appState && appState.returnTo) || window.location.pathname);
-  };
+    navigate(appState?.returnTo || '/tasklist');
+};
   
   if (!(domain && clientId && redirectUri)) {
     return null;

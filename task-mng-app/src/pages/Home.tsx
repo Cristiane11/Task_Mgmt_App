@@ -1,12 +1,12 @@
 import React from 'react'
-import LoginButton from '../components/LoginButtun';
+import LoginButton from '../components/LoginButton';
 import LogoutButton from '../components/LogoutButton';
 import { Col, Container } from 'react-bootstrap';
 import PageLayout from '../components/PageLayout';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Link } from 'react-router-dom'
 
-const HomePage: React.FC = () => {
+const Home: React.FC = () => {
 
 
   const { isAuthenticated } = useAuth0();
@@ -46,4 +46,4 @@ const HomePage: React.FC = () => {
   )
 }
 
-export default HomePage;
+export default Home;
