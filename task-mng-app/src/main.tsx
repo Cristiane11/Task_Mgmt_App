@@ -1,10 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App.tsx';
+import Auth0ProviderWithNavigate from './auto/Auto0Provider.tsx';
+import { BrowserRouter } from 'react-router-dom';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
+
+root.render(
+  <BrowserRouter>
+    <Auth0ProviderWithNavigate>
+      <App />
+    </Auth0ProviderWithNavigate>
+  </BrowserRouter>
 )
